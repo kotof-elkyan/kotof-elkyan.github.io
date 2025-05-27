@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>التسجيل في برنامج قطوف من نور</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet" />
+  <style>
+    /* Reset بسيط */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: linear-gradient(135deg, #fff9f4, #e8d7c3);
+      color: #4B3621;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      animation: fadeIn 1s ease forwards;
+    }
+    header {
+      background: #4B3621;
+      color: #fff;
+      text-align: center;
+      padding: 3rem 1rem 2rem;
+      box-shadow: 0 4px 10px rgba(75,54,33,0.3);
+      animation: slideDown 1s ease forwards;
+    }
+    header h1 {
+      margin: 0 0 0.3rem;
+      font-weight: 700;
+      font-size: 2.4rem;
+      letter-spacing: 0.05em;
+    }
+    header p {
+      margin: 0;
+      font-size: 1.2rem;
+      font-weight: 500;
+      font-style: italic;
+      opacity: 0.85;
+    }
+    section {
+      max-width: 600px;
+      margin: 3rem auto 5rem;
+      background: #fff;
+      padding: 2.5rem 3rem 3rem;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(75,54,33,0.12);
+      animation: fadeInUp 1s ease forwards;
+    }
+    h2 {
+      color: #4B3621;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      font-size: 1.8rem;
+      text-align: center;
+      letter-spacing: 0.05em;
+      text-shadow: 1px 1px 3px rgba(75,54,33,0.1);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin-top: 1.3rem;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 0.03em;
+      user-select: none;
+      transition: color 0.3s ease;
+    }
+    input, select, textarea {
+      font-family: 'Amiri', serif;
+      padding: 1rem 1.2rem;
+      border: 2px solid #c8b69a;
+      border-radius: 15px;
+      font-size: 1.15rem;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      resize: vertical;
+      min-height: 40px;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: #4B3621;
+      box-shadow: 0 0 10px rgba(75,54,33,0.4);
+      outline: none;
+    }
+    button {
+      margin-top: 2.5rem;
+      background: linear-gradient(135deg, #6F4E37, #4B3621);
+      color: white;
+      padding: 1.1rem;
+      border: none;
+      border-radius: 18px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      box-shadow: 0 6px 12px rgba(75,54,33,0.3);
+      transition: background 0.4s ease, transform 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+    }
+    button:hover {
+      background: linear-gradient(135deg, #4B3621, #6F4E37);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(75,54,33,0.5);
+    }
+    button:active {
+      transform: translateY(0);
+      box-shadow: 0 6px 12px rgba(75,54,33,0.3);
+    }
+    #confirmationMessage {
+      display: none;
+      margin-top: 2rem;
+      padding: 1.2rem;
+      border: 2px solid #4B3621;
+      border-radius: 12px;
+      background: #f9f6f1;
+      color: #4B3621;
+      font-weight: 700;
+      text-align: center;
+      font-size: 1.3rem;
+      letter-spacing: 0.05em;
+      animation: fadeIn 1s ease forwards;
+    }
+    footer {
+      background-color: #f0e6da;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1rem;
+      color: #6F4E37;
+      margin-top: 3rem;
+      user-select: none;
+    }
+
+    /* أنيميشن */
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    @keyframes slideDown {
+      from {opacity: 0; transform: translateY(-30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInUp {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* Responsive */
+    @media (max-width: 650px) {
+      section {
+        margin: 2rem 1rem 3rem;
+        padding: 1.8rem 1.5rem 2rem;
+      }
+      header h1 {
+        font-size: 1.8rem;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>التسجيل في برنامج قطوف من نور</h1>
+    <p>فرصة للارتقاء بحفظ القرآن الكريم</p>
+  </header>
+  <section>
+    <h2>نموذج التسجيل</h2>
+    <form id="registrationForm" action="https://formspree.io/f/xyzwqqyo" method="POST" autocomplete="off">
+      <label for="name">الاسم الكامل:</label>
+      <input type="text" id="name" name="الاسم الكامل" required autocomplete="name" />
+      <label for="grade">الصف الدراسي:</label>
+      <input type="text" id="grade" name="الصف الدراسي" required />
+      <label for="gender">النوع:</label>
+      <select id="gender" name="النوع" required>
+        <option value="">-- اختر --</option>
+        <option value="ذكر">ذكر</option>
+        <option value="أنثى">أنثى</option>
+      </select>
+      <label for="phone">رقم الهاتف:</label>
+      <input type="tel" id="phone" name="رقم الهاتف" required autocomplete="tel" />
+      <label for="memorization">مقدار الحفظ من القرآن الكريم:</label>
+      <textarea id="memorization" name="مقدار الحفظ" rows="4" required></textarea>
+
+      <!-- حقل مخفي لكود الحجز -->
+      <input type="hidden" id="bookingCode" name="كود الحجز" value="" />
+
+      <button type="submit">إرسال التسجيل</button>
+    </form>
+    <div id="confirmationMessage"></div>
+  </section>
+  <footer>
+    جميع الحقوق محفوظة © قطوف من نور 2025
+  </footer>
+
+  <script>
+    const form = document.getElementById('registrationForm');
+    const confirmationDiv = document.getElementById('confirmationMessage');
+    const bookingCodeInput = document.getElementById('bookingCode');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // توليد كود الحجز (6 أرقام)
+      const bookingCode = Math.floor(100000 + Math.random() * 900000);
+
+      // وضع الكود في الحقل المخفي
+      bookingCodeInput.value = bookingCode;
+
+      // جمع البيانات مع الكود الجديد
+      const formData = new FormData(form);
+
+      // إرسال البيانات إلى Formspree باستخدام fetch (AJAX)
+      fetch(form.action, {
+        method: form.method,
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          form.style.display = 'none';
+          confirmationDiv.style.display = 'block';
+          confirmationDiv.textContent = `شكراً لتسجيلك! كود الحجز الخاص بك هو: ${bookingCode}`;
+        } else {
+          confirmationDiv.style.display = 'block';
+          confirmationDiv.textContent = 'حدث خطأ أثناء إرسال التسجيل، يرجى المحاولة مرة أخرى.';
+        }
+      }).catch(() => {
+        confirmationDiv.style.display = 'block';
+        confirmationDiv.textContent = 'حدث خطأ أثناء الاتصال بالخادم، يرجى المحاولة لاحقاً.';
+      });
+    });
+  </script>
+</body>
+</html>
